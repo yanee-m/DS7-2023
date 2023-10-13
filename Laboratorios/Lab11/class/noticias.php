@@ -44,3 +44,17 @@
   }
 
 ?>
+
+<!-- Stored Procedure utilizado
+CREATE PROCEDURE sp_listar_noticias_5(IN limite INT)
+BEGIN
+    SELECT
+        titulo,
+        texto,
+        categoria,
+        fecha,
+        imagen
+    FROM
+        noticias
+    LIMIT limite, 5;
+END; -->
