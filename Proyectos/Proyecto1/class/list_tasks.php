@@ -24,8 +24,14 @@ if (!$dbConnection->_db->connect_error) {
             echo '<p>Vencimiento: ' . htmlspecialchars($row['due_date']) . '</p>';
             echo '<p>Responsable: ' . htmlspecialchars($row['responsible']) . '</p>';
             echo '<p>Tipo: ' . htmlspecialchars($row['type']) . '</p>';
-            echo '<button class="edit-button" data-task-id="' . $row['id'] . '">Edit</button>';
-            echo '<button>Eliminar</button>';
+            echo '<form method="post" action="class/add_or_update_task.php">';
+            echo '<input type="hidden" name="taskId" value="' . $row['id'] . '">';
+            echo '<input type="submit" value="Editar">';
+            echo '</form>';
+            echo '<form method="post" action="class/delete_task.php">';
+            echo '<input type="hidden" name="taskId" value="' . $row['id'] . '">';
+            echo '<input type="submit" value="Eliminar">';
+            echo '</form>';
             echo '</li>';
         }
         
