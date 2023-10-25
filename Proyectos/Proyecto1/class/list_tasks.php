@@ -1,8 +1,7 @@
 <?php
-require_once('class/config.php'); // Include your configuration file
 
 // Include the database connection class
-require_once('class/conn.php');
+require_once('conn.php');
 
 // Create a new instance of the database connection class
 $dbConnection = new conexionDB();
@@ -20,19 +19,19 @@ if (!$dbConnection->_db->connect_error) {
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<li>';
             echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
-            echo '<p>Description: ' . htmlspecialchars($row['description']) . '</p>';
-            echo '<p>Status: ' . htmlspecialchars($row['status']) . '</p>';
-            echo '<p>Due Date: ' . htmlspecialchars($row['due_date']) . '</p>';
-            echo '<p>Responsible: ' . htmlspecialchars($row['responsible']) . '</p>';
-            echo '<p>Type: ' . htmlspecialchars($row['type']) . '</p>';
-            echo '<button>Edit</button>';
-            echo '<button>Delete</button>';
+            echo '<p>Descripción: ' . htmlspecialchars($row['description']) . '</p>';
+            echo '<p>Estado: ' . htmlspecialchars($row['status']) . '</p>';
+            echo '<p>Vencimiento: ' . htmlspecialchars($row['due_date']) . '</p>';
+            echo '<p>Responsable: ' . htmlspecialchars($row['responsible']) . '</p>';
+            echo '<p>Tipo: ' . htmlspecialchars($row['type']) . '</p>';
+            echo '<button>Editar</button>';
+            echo '<button>Eliminar</button>';
             echo '</li>';
         }
         
         echo '</ul>';
     } else {
-        echo 'No tasks found.';
+        echo 'No se encontraron Tareas.';
     }
     mysqli_close($dbConnection->_db);
 } else {

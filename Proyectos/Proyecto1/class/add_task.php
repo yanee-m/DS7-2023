@@ -1,6 +1,6 @@
 <?php
 
-require_once('class/conn.php');
+require_once('conn.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dbConnection = new conexionDB();
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
       // Task added successfully, you can redirect back to the index page
-      header("Location: index.php");
+      header("Location: ../index.php");
       exit;
     } else {
       echo "Error: " . $stmt->error;
