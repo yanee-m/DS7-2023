@@ -24,7 +24,7 @@ if (!$dbConnection->_db->connect_error) {
             echo '<p>Vencimiento: ' . htmlspecialchars($row['due_date']) . '</p>';
             echo '<p>Responsable: ' . htmlspecialchars($row['responsible']) . '</p>';
             echo '<p>Tipo: ' . htmlspecialchars($row['type']) . '</p>';
-            echo '<button>Editar</button>';
+            echo '<button class="edit-button" data-task-id="' . $row['id'] . '">Edit</button>';
             echo '<button>Eliminar</button>';
             echo '</li>';
         }
