@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de registro de usuarios</title>
+</head>
+<body>
+
+  <form action="lab181.php" method="post">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" id="apellido" required>
+
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" required>
+    <span id="email-error"></span>
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="text" name="contrasena" id="contrasena" required>
+    <span id="contrasena-error"></span>
+
+    <label for="repetir-contrasena">Repetir contraseña:</label>
+    <input type="text" name="repetir-contrasena" id="repetir-contrasena" required>
+    <span id="contrasena-repetir-error"></span>
+
+    <input type="text" name="ip" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+
+    <input type="submit" value="Registrar usuario">
+
+  </form>
+
+</body>
+</html>
