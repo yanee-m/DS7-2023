@@ -21,7 +21,6 @@
 <body>
     <?php
 
-    //learn from w3schools.com
 
     session_start();
 
@@ -37,23 +36,17 @@
     }
     
 
-    //import database
+
     include("../connection.php");
     $userrow = $database->query("select * from patient where pemail='$useremail'");
     $userfetch=$userrow->fetch_assoc();
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
 
-
-    //echo $userid;
-    //echo $username;
-    
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('America/Panama');
 
     $today = date('Y-m-d');
 
-
- //echo $userid;
  ?>
  <div class="container">
      <div class="menu">

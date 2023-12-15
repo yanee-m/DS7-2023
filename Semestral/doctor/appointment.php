@@ -21,7 +21,6 @@
 <body>
     <?php
 
-    //learn from w3schools.com
 
     session_start();
 
@@ -35,16 +34,11 @@
     }else{
         header("location: ../login.php");
     }
-    
-    
-
-       //import database
        include("../connection.php");
        $userrow = $database->query("select * from doctor where docemail='$useremail'");
        $userfetch=$userrow->fetch_assoc();
        $userid= $userfetch["docid"];
        $username=$userfetch["docname"];
-    //echo $userid;
     ?>
     <div class="container">
         <div class="menu">
@@ -115,7 +109,7 @@
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('America/Panama');
 
                         $today = date('Y-m-d');
                         echo $today;
@@ -132,7 +126,7 @@
 
                 </tr>
                
-                <!-- <tr>
+                <tr>
                     <td colspan="4" >
                         <div style="display: flex;margin-top: 40px;">
                         <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">Schedule a Session</div>

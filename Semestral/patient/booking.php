@@ -21,8 +21,6 @@
 <body>
     <?php
 
-    //learn from w3schools.com
-
     session_start();
 
     if(isset($_SESSION["user"])){
@@ -37,7 +35,6 @@
     }
     
 
-    //import database
     include("../connection.php");
     $userrow = $database->query("select * from patient where pemail='$useremail'");
     $userfetch=$userrow->fetch_assoc();
@@ -45,17 +42,11 @@
     $username=$userfetch["pname"];
 
 
-    //echo $userid;
-    //echo $username;
-    
-
-
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('America/Panama');
 
     $today = date('Y-m-d');
 
 
- //echo $userid;
  ?>
  <div class="container">
      <div class="menu">
@@ -250,7 +241,7 @@
                                                             Session Title: '.$title.'<br>
                                                             Session Scheduled Date: '.$scheduledate.'<br>
                                                             Session Starts : '.$scheduletime.'<br>
-                                                            Channeling fee : <b>LKR.2 000.00</b>
+                                                            Appointment fee : <b>$20.00</b>
 
                                                         </div>
                                                         <br>
