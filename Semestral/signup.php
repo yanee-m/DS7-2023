@@ -7,26 +7,16 @@
     <link rel="stylesheet" href="css/animations.css">  
     <link rel="stylesheet" href="css/main.css">  
     <link rel="stylesheet" href="css/signup.css">
-        
     <title>Registrarse | eDoc</title>
-    
 </head>
 <body>
 <?php
-
 session_start();
-
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
-
-
 date_default_timezone_set('America/Panama');
 $date = date('Y-m-d');
-
 $_SESSION["date"]=$date;
-
-
-
 if($_POST){
     $_SESSION["personal"]=array(
         'fname'=>$_POST['fname'],
@@ -35,14 +25,10 @@ if($_POST){
         'nic'=>$_POST['nic'],
         'dob'=>$_POST['dob']
     );
-
     print_r($_SESSION["personal"]);
     header("location: create-account.php");
 }
-
 ?>
-
-
     <center>
     <div class="container">
         <table border="0">
@@ -100,7 +86,6 @@ if($_POST){
                 <td class="label-td" colspan="2">
                 </td>
             </tr>
-
             <tr>
                 <td>
                     <input type="reset" value="Borrar" class="login-btn btn-primary-soft btn" >
@@ -108,7 +93,6 @@ if($_POST){
                 <td>
                     <input type="submit" value="Siguiente" class="login-btn btn-primary btn">
                 </td>
-
             </tr>
             <tr>
                 <td colspan="2">
@@ -118,11 +102,9 @@ if($_POST){
                     <br><br><br>
                 </td>
             </tr>
-
                     </form>
             </tr>
         </table>
-
     </div>
 </center>
 </body>

@@ -57,8 +57,6 @@
                 $checker = $database->query("select * from admin where aemail='$email' and apassword='$password'");
                 if ($checker->num_rows==1){
 
-
-                    //   Admin dashbord
                     $_SESSION['user']=$email;
                     $_SESSION['usertype']='a';
                     
@@ -68,13 +66,10 @@
                     $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error de Credenciales: Correo o Clave Invalidos</label>';
                 }
 
-
             }elseif($utype=='d'){
                 $checker = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
                 if ($checker->num_rows==1){
 
-
-                    //   doctor dashbord
                     $_SESSION['user']=$email;
                     $_SESSION['usertype']='d';
                     header('location: doctor/index.php');
