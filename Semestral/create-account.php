@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ES">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/main.css">  
     <link rel="stylesheet" href="css/signup.css">
         
-    <title>Create Account</title>
+    <title>Crear una Cuenta | eDoc</title>
     <style>
         .container{
             animation: transitionIn-X 0.5s;
@@ -18,13 +18,16 @@
 <body>
 <?php
 
+//learn from w3schools.com
+//Unset all the server side variables
+
 session_start();
 
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
 
-
-date_default_timezone_set('America/Bogota');
+// Set the new timezone
+date_default_timezone_set('America/Panama');
 $date = date('Y-m-d');
 
 $_SESSION["date"]=$date;
@@ -90,50 +93,50 @@ if($_POST){
         <table border="0" style="width: 69%;">
             <tr>
                 <td colspan="2">
-                    <p class="header-text">Let's Get Started</p>
-                    <p class="sub-text">It's Okey, Now Create User Account.</p>
+                    <p class="header-text">¡Empecemos!</p>
+                    <p class="sub-text">Vamos a Crear una Cuenta.</p>
                 </td>
             </tr>
             <tr>
                 <form action="" method="POST" >
                 <td class="label-td" colspan="2">
-                    <label for="newemail" class="form-label">Email: </label>
+                    <label for="newemail" class="form-label">Correo Electronico: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="email" name="newemail" class="input-text" placeholder="Email Address" required>
+                    <input type="email" name="newemail" class="input-text" placeholder="Ingrese su Correo" required>
                 </td>
                 
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="tele" class="form-label">Mobile Number: </label>
+                    <label for="tele" class="form-label">Celular: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="tel" name="tele" class="input-text"  placeholder="ex: 0712345678" pattern="[0]{1}[0-9]{9}" >
+                    <input type="tel" name="tele" class="input-text"  placeholder="ej: 61000000"" >
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="newpassword" class="form-label">Create New Password: </label>
+                    <label for="newpassword" class="form-label">Nueva Contraseña: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="password" name="newpassword" class="input-text" placeholder="New Password" required>
+                    <input type="password" name="newpassword" class="input-text" placeholder="Ingrese su Clave" required>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="cpassword" class="form-label">Conform Password: </label>
+                    <label for="cpassword" class="form-label">Confirme su Contraseña: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="password" name="cpassword" class="input-text" placeholder="Conform Password" required>
+                    <input type="password" name="cpassword" class="input-text" placeholder="Ingrese Nuevamente su Clave" required>
                 </td>
             </tr>
      
@@ -147,18 +150,18 @@ if($_POST){
             
             <tr>
                 <td>
-                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
+                    <input type="reset" value="Borrar" class="login-btn btn-primary-soft btn" >
                 </td>
                 <td>
-                    <input type="submit" value="Sign Up" class="login-btn btn-primary btn">
+                    <input type="submit" value="Registrar" class="login-btn btn-primary btn">
                 </td>
 
             </tr>
             <tr>
                 <td colspan="2">
                     <br>
-                    <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
-                    <a href="login.php" class="hover-link1 non-style-link">Login</a>
+                    <label for="" class="sub-text" style="font-weight: 280;">Ya tiene una cuenta&#63; </label>
+                    <a href="login.php" class="hover-link1 non-style-link">Iniciar Sesión</a>
                     <br><br><br>
                 </td>
             </tr>

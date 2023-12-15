@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ES">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +8,19 @@
     <link rel="stylesheet" href="css/main.css">  
     <link rel="stylesheet" href="css/signup.css">
         
-    <title>Sign Up</title>
+    <title>Registrarse | eDoc</title>
     
 </head>
 <body>
 <?php
-
-//learn from w3schools.com
-//Unset all the server side variables
 
 session_start();
 
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
 
-// Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
+
+date_default_timezone_set('America/Panama');
 $date = date('Y-m-d');
 
 $_SESSION["date"]=$date;
@@ -31,9 +28,6 @@ $_SESSION["date"]=$date;
 
 
 if($_POST){
-
-    
-
     $_SESSION["personal"]=array(
         'fname'=>$_POST['fname'],
         'lname'=>$_POST['lname'],
@@ -42,13 +36,8 @@ if($_POST){
         'dob'=>$_POST['dob']
     );
 
-
     print_r($_SESSION["personal"]);
     header("location: create-account.php");
-
-
-
-
 }
 
 ?>
@@ -59,47 +48,47 @@ if($_POST){
         <table border="0">
             <tr>
                 <td colspan="2">
-                    <p class="header-text">Let's Get Started</p>
-                    <p class="sub-text">Add Your Personal Details to Continue</p>
+                    <p class="header-text">Comencemos</p>
+                    <p class="sub-text">Ingrese sus Datos Personales para Registrarse</p>
                 </td>
             </tr>
             <tr>
                 <form action="" method="POST" >
                 <td class="label-td" colspan="2">
-                    <label for="name" class="form-label">Name: </label>
+                    <label for="name" class="form-label">Nombre: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td">
-                    <input type="text" name="fname" class="input-text" placeholder="First Name" required>
+                    <input type="text" name="fname" class="input-text" placeholder="Ingrese su Nombre" required>
                 </td>
                 <td class="label-td">
-                    <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+                    <input type="text" name="lname" class="input-text" placeholder="Ingrese su Apellido" required>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="address" class="form-label">Address: </label>
+                    <label for="address" class="form-label">Dirección: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="text" name="address" class="input-text" placeholder="Address" required>
+                    <input type="text" name="address" class="input-text" placeholder="Ingrese su Dircción" required>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="nic" class="form-label">NIC: </label>
+                    <label for="nic" class="form-label">N° de Identificación: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="text" name="nic" class="input-text" placeholder="NIC Number" required>
+                    <input type="text" name="nic" class="input-text" placeholder="Ingrese su Cédula" required>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="dob" class="form-label">Date of Birth: </label>
+                    <label for="dob" class="form-label">Fecha de Nacimiento: </label>
                 </td>
             </tr>
             <tr>
@@ -114,18 +103,18 @@ if($_POST){
 
             <tr>
                 <td>
-                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
+                    <input type="reset" value="Borrar" class="login-btn btn-primary-soft btn" >
                 </td>
                 <td>
-                    <input type="submit" value="Next" class="login-btn btn-primary btn">
+                    <input type="submit" value="Siguiente" class="login-btn btn-primary btn">
                 </td>
 
             </tr>
             <tr>
                 <td colspan="2">
                     <br>
-                    <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
-                    <a href="login.php" class="hover-link1 non-style-link">Login</a>
+                    <label for="" class="sub-text" style="font-weight: 280;">Ya tiene una cuentat&#63; </label>
+                    <a href="login.php" class="hover-link1 non-style-link">Iniciar Sesión</a>
                     <br><br><br>
                 </td>
             </tr>
